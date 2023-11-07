@@ -1,0 +1,14 @@
+{
+  "name": "githubcomplexsearch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "githubComplexSearch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/graphql": "^7.0.2"
+  }
+}
