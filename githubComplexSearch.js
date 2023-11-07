@@ -2,7 +2,7 @@ const { graphql } = require('@octokit/graphql');
 const fs = require('fs');
 
 // Your GitHub Personal Access Token
-const accessToken = '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';
+const accessToken = 'api_token_here';
 
 
 //====================================================
