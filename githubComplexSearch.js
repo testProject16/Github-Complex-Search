@@ -1,22 +1,25 @@
 const { graphql } = require('@octokit/graphql');
 const fs = require('fs');
+const readline = require('readline');
 
-// Your GitHub Personal Access Token
-const accessToken = 'api_token_here';
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+      // Input all the parameter 
+        rl.question('Enter your GitHub Personal Access Token: ', (accessToken) => {
+        rl.question('Enable strict mode (true/false): ', (strictModeInput) => {
+          const strictMode = strictModeInput.trim().toLowerCase() === 'true';
 
+          rl.question('Enter keywords (comma-separated): ', (keywordsInput) => {
+            const keywords = keywordsInput.split(',').map(keyword => keyword.trim());
 
-//====================================================
-// Set to true to enable strict mode
-// User access variable
+            rl.question('Enter exclude keywords (comma-separated): ', (excludeKeywordsInput) => {
+              const excludeKeywordsList = excludeKeywordsInput.split(',').map(keyword => keyword.trim());
 
-const strictMode = true;
-const keywords = ['misinformation', 'disinformation', 'toxic', 'hatred','DeepFake'];
-const excludeKeywordsList = ['game'];
-const readmeKeyword='dataset';
-const jsonFileName="githubTestRun.json";
-
-//====================================================
-
+              rl.question('Enter readme keyword: ', (readmeKeyword) => {
+                rl.question('Enter JSON file name with extension(.json): ', (jsonFileName) => {
+              
 
 // Define the GraphQL query to retrieve repository information
 const query = `
@@ -182,3 +185,10 @@ const languageCount = {};
 
 // Start fetching repositories from index 0 up to the end
 fetchRepositoriesUpToEnd();
+rl.close();
+});
+});
+});
+});
+});
+});
