@@ -11,13 +11,13 @@ const rl = readline.createInterface({
         rl.question('Enable strict mode (true/false): ', (strictModeInput) => {
           const strictMode = strictModeInput.trim().toLowerCase() === 'true';
 
-          rl.question('Enter keywords (comma-separated): ', (keywordsInput) => {
+          rl.question('Enter multiple keywords (comma-separated): ', (keywordsInput) => {
             const keywords = keywordsInput.split(',').map(keyword => keyword.trim());
 
-            rl.question('Enter exclude keywords (comma-separated): ', (excludeKeywordsInput) => {
+            rl.question('Enter multiple exclude keywords (comma-separated): ', (excludeKeywordsInput) => {
               const excludeKeywordsList = excludeKeywordsInput.split(',').map(keyword => keyword.trim());
 
-              rl.question('Enter readme keyword: ', (readmeKeyword) => {
+              rl.question('Enter single readme keyword: ', (readmeKeyword) => {
                 rl.question('Enter JSON file name with extension(.json): ', (jsonFileName) => {
               
 
